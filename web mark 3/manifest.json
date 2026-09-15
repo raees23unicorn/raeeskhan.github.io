@@ -1,0 +1,15 @@
+{
+  "name": "RNR Fabrics",
+  "short_name": "RNR Fabrics",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#DEDCE8",
+  "theme_color": "#DEDCE8",
+  "icons": [
+    {
+      "src": "logo.jpg",
+      "sizes": "1080x1080",
+      "type": "image/jpeg"
+    }
+  ]
+}

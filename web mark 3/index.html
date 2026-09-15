@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RNR Fabrics | South African Fabric & Home Store — Opening Soon</title>
+<meta name="description" content="RNR Fabrics — dress fabric, haberdashery, curtaining and home textiles, made for makers across South Africa. Opening soon.">
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="apple-touch-icon" href="logo.jpg">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#DEDCE8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Work+Sans:wght@400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#DEDCE8;
+    --paper:#E7E5F0;
+    --ink:#201F22;
+    --brown:#75787C;
+    --brown-light:#A6A9AD;
+    --tan:#D6D7DA;
+    --metal-dark:#4B4D50;
+    --metal-light:#9DA0A4;
+    --line: rgba(32,31,34,0.14);
+    --max: 1180px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 12% 18%, rgba(236,235,244,0.9), transparent 38%),
+      radial-gradient(circle at 88% 12%, rgba(196,203,226,0.5), transparent 42%),
+      radial-gradient(circle at 25% 85%, rgba(212,204,232,0.4), transparent 45%),
+      radial-gradient(circle at 78% 88%, rgba(200,214,224,0.4), transparent 45%),
+      var(--cream);
+    background-attachment:fixed;
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{
+    font-family:'Playfair Display', serif;
+    margin:0;
+    color:var(--ink);
+    font-weight:600;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  /* ---------- Announcement bar ---------- */
+  .announce{
+    background:linear-gradient(120deg, #3F4144 0%, #6C6F73 35%, #34363A 65%, #57595D 100%);
+    color:var(--cream);
+    text-shadow:0 0 10px rgba(255,255,255,0.4), 0 1px 2px rgba(0,0,0,0.35);
+    text-align:center;
+    font-size:13.5px;
+    letter-spacing:.02em;
+    padding:10px 16px;
+  }
+  .announce strong{font-weight:600;}
+
+  /* ---------- Header ---------- */
+  header{
+    background:var(--cream);
+    border-bottom:1px solid var(--line);
+    position:sticky;
+    top:0;
+    z-index:50;
+  }
+  .header-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 28px;
+    gap:24px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .brand-mark{display:block; flex-shrink:0;}
+  .brand-mark svg{width:76px; height:auto; display:block;}
+  .brand-name{
+    font-family:'Playfair Display', serif;
+    font-size:22px;
+    font-weight:700;
+    line-height:1;
+  }
+  .brand-name span{
+    display:block;
+    font-family:'Work Sans', sans-serif;
+    font-size:10.5px;
+    font-weight:500;
+    letter-spacing:.14em;
+    color:var(--brown-light);
+    margin-top:3px;
+  }
+  nav.main-nav{
+    display:flex;
+    gap:34px;
+  }
+  nav.main-nav a{
+    font-size:14.5px;
+    font-weight:500;
+    position:relative;
+    padding:4px 0;
+  }
+  nav.main-nav a::after{
+    content:'';
+    position:absolute;
+    left:0; right:0; bottom:0;
+    height:1.5px;
+    background:var(--brown);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .25s ease;
+  }
+  nav.main-nav a:hover::after{transform:scaleX(1);}
+  .header-actions{
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .icon-btn{
+    width:38px; height:38px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:var(--brown);
+    flex-shrink:0;
+  }
+  .btn-notify-small{
+    background:linear-gradient(135deg, #6C6F73 0%, #9DA0A4 45%, #4B4D50 100%);
+    color:var(--cream);
+    text-shadow:0 0 8px rgba(255,255,255,0.4), 0 1px 2px rgba(0,0,0,0.35);
+    padding:9px 18px;
+    border-radius:4px;
+    font-size:13.5px;
+    font-weight:500;
+    white-space:nowrap;
+  }
+  .menu-toggle{display:none;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:88px 28px 96px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    max-width:var(--max);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    align-items:center;
+    gap:56px;
+  }
+  .hero-eyebrow{
+    font-size:14px;
+    color:var(--brown-light);
+    font-weight:500;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(38px, 5vw, 58px);
+    line-height:1.08;
+    letter-spacing:-.01em;
+  }
+  .hero p.lede{
+    margin-top:22px;
+    font-size:18px;
+    max-width:46ch;
+    color:var(--brown-light);
+  }
+  .hero-form{
+    margin-top:34px;
+    display:flex;
+    gap:10px;
+    max-width:440px;
+  }
+  .hero-form input{
+    flex:1;
+    padding:14px 16px;
+    border:1px solid var(--brown-light);
+    border-radius:4px;
+    background:var(--paper);
+    font-family:'Work Sans', sans-serif;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .hero-form input:focus{
+    outline:2px solid var(--brown);
+    outline-offset:1px;
+  }
+  .btn-primary{
+    background:linear-gradient(135deg, #6C6F73 0%, #9DA0A4 45%, #4B4D50 100%);
+    color:var(--cream);
+    text-shadow:0 0 8px rgba(255,255,255,0.4), 0 1px 2px rgba(0,0,0,0.35);
+    border:none;
+    padding:14px 24px;
+    border-radius:4px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    font-family:'Work Sans', sans-serif;
+    white-space:nowrap;
+    transition:filter .2s ease;
+  }
+  .btn-primary:hover{filter:brightness(1.12);}
+  .hero-note{
+    margin-top:14px;
+    font-size:13px;
+    color:var(--brown-light);
+  }
+
+  .hero-mark{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+  }
+  .hero-mark svg{width:100%; max-width:340px; height:auto;}
+
+  /* ---------- Weave divider ---------- */
+  .divider{
+    display:flex;
+    justify-content:center;
+    padding:6px 0;
+    background:var(--cream);
+  }
+  .divider svg{width:44px; height:44px; opacity:.55;}
+
+  /* ---------- Section shell ---------- */
+  section{padding:84px 28px;}
+  .section-head{
+    max-width:640px;
+    margin:0 auto 48px;
+    text-align:center;
+  }
+  .section-head .kicker{
+    font-size:14px;
+    color:var(--brown-light);
+    font-weight:500;
+    margin-bottom:10px;
+  }
+  .section-head h2{
+    font-size:clamp(28px,3.4vw,38px);
+  }
+  .section-head p{
+    margin-top:14px;
+    color:var(--brown-light);
+    font-size:16px;
+  }
+
+  /* ---------- Departments ---------- */
+  .departments{background:var(--paper);}
+  .dept-grid{
+    max-width:var(--max);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+  }
+  .dept-card{
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:30px 26px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .dept-card:hover{
+    border-color:var(--brown-light);
+    transform:translateY(-3px);
+  }
+  .dept-card .weave-icon{width:40px; height:40px; color:var(--brown);}
+  .dept-card h3{font-size:20px;}
+  .dept-card p{
+    font-size:14.5px;
+    color:var(--brown-light);
+    margin:0;
+  }
+  .dept-card .dept-link{
+    margin-top:auto;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--brown);
+    border-top:1px solid var(--line);
+    padding-top:14px;
+  }
+
+  /* ---------- Featured range ---------- */
+  .swatch-grid{
+    max-width:var(--max);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+  }
+  .swatch-card{
+    border-radius:6px;
+    overflow:hidden;
+    background:var(--paper);
+    border:1px solid var(--line);
+  }
+  .swatch-visual{
+    aspect-ratio:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .swatch-visual svg{width:64%; height:64%;}
+  .swatch-body{padding:16px 18px 20px;}
+  .swatch-body .label{font-size:12.5px; color:var(--brown-light); font-weight:500; letter-spacing:.02em;}
+  .swatch-body h4{
+    font-family:'Playfair Display', serif;
+    font-size:18px;
+    font-weight:600;
+    margin:4px 0 0;
+  }
+
+  /* ---------- Story ---------- */
+  .story{
+    background:linear-gradient(120deg, #3F4144 0%, #6C6F73 35%, #34363A 65%, #57595D 100%);
+    color:var(--cream);
+  }
+  .story-grid{
+    max-width:var(--max);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:56px;
+    align-items:center;
+  }
+  .story h2{
+    color:var(--cream);
+    text-shadow:0 0 12px rgba(255,255,255,0.35), 0 1px 3px rgba(0,0,0,0.35);
+    font-size:clamp(28px,3.2vw,36px);
+    line-height:1.15;
+  }
+  .story p{
+    margin-top:18px;
+    color:#D8D9DB;
+    font-size:16.5px;
+    max-width:56ch;
+  }
+  .story .weave-large{width:100%; max-width:280px; opacity:.9;}
+  .story-figures{
+    display:flex;
+    gap:36px;
+    margin-top:34px;
+  }
+  .story-figures div strong{
+    display:block;
+    font-family:'Playfair Display', serif;
+    font-size:26px;
+    color:var(--tan);
+    text-shadow:0 0 10px rgba(255,255,255,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  }
+  .story-figures div span{
+    font-size:13px;
+    color:#D8D9DB;
+  }
+
+  /* ---------- Newsletter ---------- */
+  .newsletter{
+    text-align:center;
+  }
+  .newsletter h2{font-size:clamp(26px,3vw,34px);}
+  .newsletter p{
+    margin:14px auto 0;
+    max-width:50ch;
+    color:var(--brown-light);
+  }
+  .newsletter-form{
+    margin:30px auto 0;
+    display:flex;
+    gap:10px;
+    max-width:440px;
+  }
+  .newsletter-form input{
+    flex:1;
+    padding:14px 16px;
+    border:1px solid var(--brown-light);
+    border-radius:4px;
+    background:var(--paper);
+    font-family:'Work Sans', sans-serif;
+    font-size:15px;
+    color:var(--ink);
+  }
+  .form-status{
+    margin-top:14px;
+    font-size:14px;
+    color:var(--brown);
+    min-height:18px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink);
+    color:#D4D5D7;
+    padding:64px 28px 28px;
+  }
+  .footer-grid{
+    max-width:var(--max);
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1.2fr;
+    gap:40px;
+    padding-bottom:40px;
+    border-bottom:1px solid rgba(212,213,215,.18);
+  }
+  .footer-brand{display:flex; align-items:center; gap:12px; margin-bottom:16px;}
+  .footer-brand-mark{display:block; flex-shrink:0;}
+  .footer-brand-mark svg{width:50px; height:auto; display:block;}
+  .footer-brand span{font-family:'Playfair Display', serif; font-size:19px; color:var(--cream); text-shadow:0 0 10px rgba(255,255,255,0.35), 0 1px 2px rgba(0,0,0,0.3); font-weight:700;}
+  footer p.tag{font-size:14px; color:#A9ABAE; text-shadow:0 0 8px rgba(255,255,255,0.25), 0 1px 2px rgba(0,0,0,0.3); max-width:32ch;}
+  footer h5{
+    font-family:'Work Sans', sans-serif;
+    font-size:13px;
+    letter-spacing:.06em;
+    color:var(--tan);
+    text-shadow:0 0 10px rgba(255,255,255,0.4), 0 1px 2px rgba(0,0,0,0.3);
+    margin:0 0 16px;
+    font-weight:600;
+  }
+  footer ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px;}
+  footer ul a{font-size:14.5px; color:#D4D5D7; text-shadow:0 0 8px rgba(255,255,255,0.3), 0 1px 2px rgba(0,0,0,0.3);}
+  footer ul a:hover{color:var(--tan);}
+  .footer-bottom{
+    max-width:var(--max);
+    margin:24px auto 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:13px;
+    color:#8C8E91;
+    text-shadow:0 0 6px rgba(255,255,255,0.2);
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .social-row{display:flex; gap:14px;}
+  .social-row a{
+    width:34px; height:34px;
+    border:1px solid rgba(212,213,215,.3);
+    border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    color:#D4D5D7;
+    text-shadow:0 0 8px rgba(255,255,255,0.3);
+    transition:border-color .2s ease, color .2s ease;
+  }
+  .social-row a:hover{
+    border-color:var(--tan);
+    color:var(--tan);
+  }
+  .social-row svg{width:17px; height:17px;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 900px){
+    nav.main-nav{display:none;}
+    .hero-grid{grid-template-columns:1fr; text-align:center;}
+    .hero p.lede{margin-left:auto; margin-right:auto;}
+    .hero-form{margin-left:auto; margin-right:auto;}
+    .hero-mark{order:-1; max-width:220px; margin:0 auto;}
+    .dept-grid{grid-template-columns:repeat(2,1fr);}
+    .swatch-grid{grid-template-columns:repeat(2,1fr);}
+    .story-grid{grid-template-columns:1fr; text-align:center;}
+    .story p{margin-left:auto; margin-right:auto;}
+    .story-figures{justify-content:center;}
+    .footer-grid{grid-template-columns:1fr 1fr; gap:32px;}
+  }
+  @media (max-width: 560px){
+    .header-row{padding:14px 20px;}
+    .brand-name{font-size:18px;}
+    .btn-notify-small{display:none;}
+    section{padding:64px 20px;}
+    .dept-grid, .swatch-grid{grid-template-columns:1fr 1fr;}
+    .hero-form, .newsletter-form{flex-direction:column;}
+    .footer-grid{grid-template-columns:1fr;}
+    .footer-bottom{flex-direction:column; align-items:flex-start;}
+  }
+</style>
+</head>
+<body>
+
+<div class="announce"><strong>RNR Fabrics is opening soon.</strong> Join the list to be first through the door.</div>
+
+<header>
+  <div class="header-row wrap" style="padding-left:0; padding-right:0;">
+    <div class="brand">
+      <span class="brand-mark">
+        <img src="logo.jpg" alt="RNR Fabrics logo" style="width:76px; height:auto; border-radius:6px; display:block;">
+      </span>
+      <div class="brand-name">RNR Fabrics<span>DRESS FABRIC &amp; HOME TEXTILES</span></div>
+    </div>
+    <nav class="main-nav">
+      <a href="#departments">Fabric</a>
+      <a href="#departments">Haberdashery</a>
+      <a href="#featured">Home Décor</a>
+      <a href="#story">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a href="#contact" class="btn-notify-small">Notify Me</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-eyebrow">South Africa &middot; Opening soon</div>
+      <h1>Fabric and home textiles, chosen for people who make things.</h1>
+      <p class="lede">RNR Fabrics is a new home for dress fabric, haberdashery, curtaining and home textiles. We're putting the shelves together — leave your email and we'll let you know the moment the doors open.</p>
+      <form class="hero-form" id="hero-notify-form" name="hero-notify" method="POST" data-netlify="true" netlify-honeypot="hp-field">
+        <input type="hidden" name="form-name" value="hero-notify">
+        <p style="position:absolute; left:-5000px;" aria-hidden="true"><input type="text" name="hp-field" tabindex="-1"></p>
+        <input type="email" name="email" id="hero-email" placeholder="Your email address" aria-label="Email address" required>
+        <button class="btn-primary" type="submit">Notify Me</button>
+      </form>
+      <div class="hero-note" id="hero-form-status">No spam — just a heads-up when we launch and the odd opening special.</div>
+    </div>
+    <div class="hero-mark">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="silverShine1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#B4B6B9"/>
+            <stop offset="30%" stop-color="#6C6F73"/>
+            <stop offset="55%" stop-color="#9DA0A4"/>
+            <stop offset="100%" stop-color="#4B4D50"/>
+          </linearGradient>
+        </defs>
+        <g fill="url(#silverShine1)">
+          <rect x="88" y="20" width="16" height="34" rx="4" transform="rotate(45 96 37)"/>
+          <rect x="60" y="30" width="16" height="18" rx="4" transform="rotate(45 68 39)"/>
+          <rect x="116" y="30" width="16" height="18" rx="4" transform="rotate(45 124 39)"/>
+          <rect x="36" y="58" width="16" height="34" rx="4" transform="rotate(45 44 75)"/>
+          <rect x="72" y="52" width="16" height="46" rx="4" transform="rotate(-45 80 75)"/>
+          <rect x="112" y="52" width="16" height="46" rx="4" transform="rotate(45 120 75)"/>
+          <rect x="150" y="58" width="16" height="34" rx="4" transform="rotate(-45 158 75)"/>
+          <rect x="24" y="94" width="16" height="18" rx="4" transform="rotate(45 32 103)"/>
+          <rect x="54" y="88" width="16" height="46" rx="4" transform="rotate(-45 62 111)"/>
+          <rect x="92" y="82" width="16" height="58" rx="4" transform="rotate(45 100 111)"/>
+          <rect x="130" y="88" width="16" height="46" rx="4" transform="rotate(-45 138 111)"/>
+          <rect x="160" y="94" width="16" height="18" rx="4" transform="rotate(45 168 103)"/>
+          <rect x="36" y="128" width="16" height="34" rx="4" transform="rotate(-45 44 145)"/>
+          <rect x="72" y="122" width="16" height="46" rx="4" transform="rotate(45 80 145)"/>
+          <rect x="112" y="122" width="16" height="46" rx="4" transform="rotate(-45 120 145)"/>
+          <rect x="150" y="128" width="16" height="34" rx="4" transform="rotate(45 158 145)"/>
+          <rect x="60" y="162" width="16" height="18" rx="4" transform="rotate(-45 68 171)"/>
+          <rect x="116" y="162" width="16" height="18" rx="4" transform="rotate(-45 124 171)"/>
+          <rect x="88" y="156" width="16" height="34" rx="4" transform="rotate(-45 96 173)"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="divider">
+  <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="silverShine2" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#B4B6B9"/>
+        <stop offset="30%" stop-color="#6C6F73"/>
+        <stop offset="55%" stop-color="#9DA0A4"/>
+        <stop offset="100%" stop-color="#4B4D50"/>
+      </linearGradient>
+    </defs>
+    <g fill="url(#silverShine2)">
+      <rect x="16" y="2" width="6" height="12" rx="2" transform="rotate(45 19 8)"/>
+      <rect x="4" y="14" width="6" height="12" rx="2" transform="rotate(-45 7 20)"/>
+      <rect x="28" y="14" width="6" height="12" rx="2" transform="rotate(45 31 20)"/>
+      <rect x="16" y="26" width="6" height="12" rx="2" transform="rotate(-45 19 32)"/>
+    </g>
+  </svg>
+</div>
+
+<section class="departments" id="departments">
+  <div class="section-head">
+    <div class="kicker">Shop by department</div>
+    <h2>Everything for your next project</h2>
+    <p>We're building out the full range ahead of launch. Here's what you'll find on the shelves.</p>
+  </div>
+  <div class="dept-grid wrap" style="padding:0;">
+    <div class="dept-card">
+      <svg class="weave-icon" viewBox="0 0 40 40" fill="none"><g fill="currentColor"><rect x="17" y="3" width="6" height="12" rx="2" transform="rotate(45 20 9)"/><rect x="5" y="15" width="6" height="12" rx="2" transform="rotate(-45 8 21)"/><rect x="29" y="15" width="6" height="12" rx="2" transform="rotate(45 32 21)"/><rect x="17" y="27" width="6" height="12" rx="2" transform="rotate(-45 20 33)"/></g></svg>
+      <h3>Dress Fabric</h3>
+      <p>Cottons, linens, jersey and occasion fabric for garment making, sold by the metre.</p>
+      <div class="dept-link">Coming soon</div>
+    </div>
+    <div class="dept-card">
+      <svg class="weave-icon" viewBox="0 0 40 40" fill="none"><g fill="currentColor"><rect x="17" y="3" width="6" height="12" rx="2" transform="rotate(45 20 9)"/><rect x="5" y="15" width="6" height="12" rx="2" transform="rotate(-45 8 21)"/><rect x="29" y="15" width="6" height="12" rx="2" transform="rotate(45 32 21)"/><rect x="17" y="27" width="6" height="12" rx="2" transform="rotate(-45 20 33)"/></g></svg>
+      <h3>Haberdashery</h3>
+      <p>Thread, zips, buttons, patterns and every notion your sewing box is missing.</p>
+      <div class="dept-link">Coming soon</div>
+    </div>
+    <div class="dept-card">
+      <svg class="weave-icon" viewBox="0 0 40 40" fill="none"><g fill="currentColor"><rect x="17" y="3" width="6" height="12" rx="2" transform="rotate(45 20 9)"/><rect x="5" y="15" width="6" height="12" rx="2" transform="rotate(-45 8 21)"/><rect x="29" y="15" width="6" height="12" rx="2" transform="rotate(45 32 21)"/><rect x="17" y="27" width="6" height="12" rx="2" transform="rotate(-45 20 33)"/></g></svg>
+      <h3>Curtaining</h3>
+      <p>Voile, blockout and decorator fabric for curtains, blinds and soft furnishings.</p>
+      <div class="dept-link">Coming soon</div>
+    </div>
+    <div class="dept-card">
+      <svg class="weave-icon" viewBox="0 0 40 40" fill="none"><g fill="currentColor"><rect x="17" y="3" width="6" height="12" rx="2" transform="rotate(45 20 9)"/><rect x="5" y="15" width="6" height="12" rx="2" transform="rotate(-45 8 21)"/><rect x="29" y="15" width="6" height="12" rx="2" transform="rotate(45 32 21)"/><rect x="17" y="27" width="6" height="12" rx="2" transform="rotate(-45 20 33)"/></g></svg>
+      <h3>Upholstery</h3>
+      <p>Hard-wearing weaves and textured fabric for chairs, sofas and cushions.</p>
+      <div class="dept-link">Coming soon</div>
+    </div>
+    <div class="dept-card">
+      <svg class="weave-icon" viewBox="0 0 40 40" fill="none"><g fill="currentColor"><rect x="17" y="3" width="6" height="12" rx="2" transform="rotate(45 20 9)"/><rect x="5" y="15" width="6" height="12" rx="2" transform="rotate(-45 8 21)"/><rect x="29" y="15" width="6" height="12" rx="2" transform="rotate(45 32 21)"/><rect x="17" y="27" width="6" height="12" rx="2" transform="rotate(-45 20 33)"/></g></svg>
+      <h3>Home &amp; Linen</h3>
+      <p>Towelling, bedding fabric and homeware essentials for around the house.</p>
+      <div class="dept-link">Coming soon</div>
+    </div>
+    <div class="dept-card">
+      <svg class="weave-icon" viewBox="0 0 40 40" fill="none"><g fill="currentColor"><rect x="17" y="3" width="6" height="12" rx="2" transform="rotate(45 20 9)"/><rect x="5" y="15" width="6" height="12" rx="2" transform="rotate(-45 8 21)"/><rect x="29" y="15" width="6" height="12" rx="2" transform="rotate(45 32 21)"/><rect x="17" y="27" width="6" height="12" rx="2" transform="rotate(-45 20 33)"/></g></svg>
+      <h3>Wool &amp; Knitting</h3>
+      <p>Yarn and knitting supplies for jerseys, blankets and craft projects.</p>
+      <div class="dept-link">Coming soon</div>
+    </div>
+  </div>
+</section>
+
+<section id="featured">
+  <div class="section-head">
+    <div class="kicker">Coming to the shelves</div>
+    <h2>A first look at the range</h2>
+    <p>Placeholder swatches — swap these for real product photography once stock arrives.</p>
+  </div>
+  <div class="swatch-grid wrap" style="padding:0;">
+    <div class="swatch-card">
+      <div class="swatch-visual" style="background:#C9C6D6;">
+        <svg viewBox="0 0 60 60" fill="none"><g fill="#3A3C3F" opacity=".55"><rect x="26" y="4" width="8" height="16" rx="3" transform="rotate(45 30 12)"/><rect x="8" y="22" width="8" height="16" rx="3" transform="rotate(-45 12 30)"/><rect x="44" y="22" width="8" height="16" rx="3" transform="rotate(45 48 30)"/><rect x="26" y="40" width="8" height="16" rx="3" transform="rotate(-45 30 48)"/></g></svg>
+      </div>
+      <div class="swatch-body">
+        <div class="label">Cotton Poplin</div>
+        <h4>Sand &amp; Ochre</h4>
+      </div>
+    </div>
+    <div class="swatch-card">
+      <div class="swatch-visual" style="background:#8A8D9B;">
+        <svg viewBox="0 0 60 60" fill="none"><g fill="#201F22" opacity=".5"><rect x="26" y="4" width="8" height="16" rx="3" transform="rotate(45 30 12)"/><rect x="8" y="22" width="8" height="16" rx="3" transform="rotate(-45 12 30)"/><rect x="44" y="22" width="8" height="16" rx="3" transform="rotate(45 48 30)"/><rect x="26" y="40" width="8" height="16" rx="3" transform="rotate(-45 30 48)"/></g></svg>
+      </div>
+      <div class="swatch-body">
+        <div class="label">Home Linen</div>
+        <h4>Terracotta Weave</h4>
+      </div>
+    </div>
+    <div class="swatch-card">
+      <div class="swatch-visual" style="background:#3E4048;">
+        <svg viewBox="0 0 60 60" fill="none"><g fill="#E7E5F0" opacity=".6"><rect x="26" y="4" width="8" height="16" rx="3" transform="rotate(45 30 12)"/><rect x="8" y="22" width="8" height="16" rx="3" transform="rotate(-45 12 30)"/><rect x="44" y="22" width="8" height="16" rx="3" transform="rotate(45 48 30)"/><rect x="26" y="40" width="8" height="16" rx="3" transform="rotate(-45 30 48)"/></g></svg>
+      </div>
+      <div class="swatch-body">
+        <div class="label">Upholstery</div>
+        <h4>Espresso Boucle</h4>
+      </div>
+    </div>
+    <div class="swatch-card">
+      <div class="swatch-visual" style="background:#2E2B36;">
+        <svg viewBox="0 0 60 60" fill="none"><g fill="#D6D7DA" opacity=".65"><rect x="26" y="4" width="8" height="16" rx="3" transform="rotate(45 30 12)"/><rect x="8" y="22" width="8" height="16" rx="3" transform="rotate(-45 12 30)"/><rect x="44" y="22" width="8" height="16" rx="3" transform="rotate(45 48 30)"/><rect x="26" y="40" width="8" height="16" rx="3" transform="rotate(-45 30 48)"/></g></svg>
+      </div>
+      <div class="swatch-body">
+        <div class="label">Curtaining</div>
+        <h4>Deep Umber Voile</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="story-grid wrap" style="padding:0;">
+    <div style="display:flex; justify-content:center;">
+      <svg class="weave-large" viewBox="0 0 200 200" fill="none">
+        <defs>
+          <linearGradient id="silverShine3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FFFFFF"/>
+            <stop offset="35%" stop-color="#C3C5C8"/>
+            <stop offset="60%" stop-color="#EDEDEE"/>
+            <stop offset="100%" stop-color="#9DA0A4"/>
+          </linearGradient>
+        </defs>
+        <g fill="url(#silverShine3)">
+          <rect x="88" y="20" width="16" height="34" rx="4" transform="rotate(45 96 37)"/>
+          <rect x="60" y="30" width="16" height="18" rx="4" transform="rotate(45 68 39)"/>
+          <rect x="116" y="30" width="16" height="18" rx="4" transform="rotate(45 124 39)"/>
+          <rect x="36" y="58" width="16" height="34" rx="4" transform="rotate(45 44 75)"/>
+          <rect x="72" y="52" width="16" height="46" rx="4" transform="rotate(-45 80 75)"/>
+          <rect x="112" y="52" width="16" height="46" rx="4" transform="rotate(45 120 75)"/>
+          <rect x="150" y="58" width="16" height="34" rx="4" transform="rotate(-45 158 75)"/>
+          <rect x="24" y="94" width="16" height="18" rx="4" transform="rotate(45 32 103)"/>
+          <rect x="54" y="88" width="16" height="46" rx="4" transform="rotate(-45 62 111)"/>
+          <rect x="92" y="82" width="16" height="58" rx="4" transform="rotate(45 100 111)"/>
+          <rect x="130" y="88" width="16" height="46" rx="4" transform="rotate(-45 138 111)"/>
+          <rect x="160" y="94" width="16" height="18" rx="4" transform="rotate(45 168 103)"/>
+          <rect x="36" y="128" width="16" height="34" rx="4" transform="rotate(-45 44 145)"/>
+          <rect x="72" y="122" width="16" height="46" rx="4" transform="rotate(45 80 145)"/>
+          <rect x="112" y="122" width="16" height="46" rx="4" transform="rotate(-45 120 145)"/>
+          <rect x="150" y="128" width="16" height="34" rx="4" transform="rotate(45 158 145)"/>
+          <rect x="60" y="162" width="16" height="18" rx="4" transform="rotate(-45 68 171)"/>
+          <rect x="116" y="162" width="16" height="18" rx="4" transform="rotate(-45 124 171)"/>
+          <rect x="88" y="156" width="16" height="34" rx="4" transform="rotate(-45 96 173)"/>
+        </g>
+      </svg>
+    </div>
+    <div>
+      <h2>Built by people who understand fabric.</h2>
+      <p>RNR Fabrics is a new South African store for dress fabric, haberdashery and home textiles. We're sourcing a range that covers everyday basics through to occasion fabric, so whatever you're making, you'll find it here — at fair prices, with people who actually know their textiles behind the counter.</p>
+      <div class="story-figures">
+        <div><strong>Opening 2026</strong><span>Launch window</span></div>
+        <div><strong>SA-wide</strong><span>Delivery on launch</span></div>
+        <div><strong>New</strong><span>Range added weekly</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="newsletter" id="contact">
+  <div class="wrap" style="padding:0;">
+    <div class="section-head" style="margin-bottom:0;">
+      <div class="kicker">Stay in the loop</div>
+      <h2>Be the first to shop RNR Fabrics</h2>
+      <p>Leave your email and we'll send one message the day we open — plus first access to opening specials.</p>
+      <form class="newsletter-form" id="notify-form" name="newsletter-notify" method="POST" data-netlify="true" netlify-honeypot="hp-field2">
+        <input type="hidden" name="form-name" value="newsletter-notify">
+        <p style="position:absolute; left:-5000px;" aria-hidden="true"><input type="text" name="hp-field2" tabindex="-1"></p>
+        <input type="email" name="email" id="notify-email" placeholder="Your email address" aria-label="Email address" required>
+        <button class="btn-primary" type="submit">Notify Me</button>
+      </form>
+      <div class="form-status" id="form-status" role="status"></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <span class="footer-brand-mark">
+          <svg viewBox="0 0 240 260" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoSilverFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#EDEDEE"/>
+                <stop offset="30%" stop-color="#9DA0A4"/>
+                <stop offset="55%" stop-color="#C9C6D6"/>
+                <stop offset="100%" stop-color="#4B4D50"/>
+              </linearGradient>
+            </defs>
+            <g fill="url(#logoSilverFooter)" transform="translate(90,10) scale(1.5)">
+              <rect x="16" y="2" width="6" height="12" rx="2" transform="rotate(45 19 8)"/>
+              <rect x="4" y="14" width="6" height="12" rx="2" transform="rotate(-45 7 20)"/>
+              <rect x="28" y="14" width="6" height="12" rx="2" transform="rotate(45 31 20)"/>
+              <rect x="16" y="26" width="6" height="12" rx="2" transform="rotate(-45 19 32)"/>
+            </g>
+            <text x="120" y="175" text-anchor="middle"><tspan font-family="Playfair Display, serif" font-weight="700" font-size="72" fill="url(#logoSilverFooter)">R</tspan><tspan font-family="Alex Brush, cursive" font-size="54" dy="8" fill="url(#logoSilverFooter)">n</tspan><tspan font-family="Playfair Display, serif" font-weight="700" font-size="72" dy="-8" fill="url(#logoSilverFooter)">R</tspan></text>
+            <rect x="20" y="200" width="200" height="42" rx="3" fill="#3A3C40"/>
+            <text x="120" y="228" text-anchor="middle" font-family="Work Sans, sans-serif" font-weight="600" font-size="18" letter-spacing="6" fill="#F0EFEC">FABRICS</text>
+          </svg>
+        </span>
+        <span>RNR Fabrics</span>
+      </div>
+      <p class="tag">South Africa's newest home for dress fabric, haberdashery and home textiles. Opening soon.</p>
+    </div>
+    <div>
+      <h5>SHOP</h5>
+      <ul>
+        <li><a href="#departments">Dress Fabric</a></li>
+        <li><a href="#departments">Haberdashery</a></li>
+        <li><a href="#departments">Curtaining</a></li>
+        <li><a href="#departments">Home &amp; Linen</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>INFORMATION</h5>
+      <ul>
+        <li><a href="#story">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Terms of Service</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>GET IN TOUCH</h5>
+      <ul>
+        <li>WhatsApp: <a href="https://wa.me/27837771827" target="_blank" rel="noopener">083 777 1827</a></li>
+        <li>Email: hello@rnrfabrics.co.za</li>
+        <li>Address: <a href="https://www.google.com/maps/search/?api=1&query=70+East+Road%2C+Devland%2C+Johannesburg" target="_blank" rel="noopener">70 East Road, Devland, 2nd Floor, Shop 7</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 RNR Fabrics. All rights reserved.</span>
+    <div class="social-row">
+      <a href="https://www.instagram.com/rnr_fabrics" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/>
+          <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function encodeFormData(data) {
+    return Object.keys(data).map(function(key){
+      return encodeURIComponent(key) + '=' + encodeURIComponent(data[key]);
+    }).join('&');
+  }
+
+  document.querySelectorAll('form[data-netlify="true"]').forEach(function(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var emailInput = form.querySelector('input[type="email"]');
+      var email = emailInput.value;
+      if(!email) return;
+
+      var statusEl = form.parentElement.querySelector('.hero-note, .form-status');
+
+      var payload = {};
+      new FormData(form).forEach(function(value, key){ payload[key] = value; });
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormData(payload)
+      })
+      .then(function(){
+        if(statusEl){
+          statusEl.textContent = "Thanks — we'll email " + email + " the moment we open.";
+        }
+        form.reset();
+      })
+      .catch(function(){
+        if(statusEl){
+          statusEl.textContent = "Something went wrong — please try again.";
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
